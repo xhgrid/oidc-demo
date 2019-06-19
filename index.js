@@ -39,6 +39,7 @@ router.get("/protected/resource", async (ctx, next) => {
     // 使用 oidc 应用的 clientSecret 进行 token 验证
     // 验证失败，jsonwebtoken 库会抛出错误，比如 token 过期，签名错误
     let decoded = jwt.verify(idToken, clientSecret);
+    ctx.body = {protected: "This is protected resource."}
   } catch (err) {
     // 把用户重定向到 oidc 授权地址，进行登录
     ctx.redirect(
