@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "axios": "^0.19.0",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0"
+  },
+  "name": "oidc-demo",
+  "version": "1.0.0",
+  "description": "Authing OIDC RP demo",
+  "main": "index.js",
+  "author": "Mark Yeh <yelexin@hotmail.com>",
+  "license": "MIT",
+  "private": false
+}
