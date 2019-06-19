@@ -21,7 +21,7 @@ router.get("/oidc/handle", async (ctx, next) => {
       redirect_uri: "https://yourapp.cn/oidc/handle"
     }
   );
-  let { access_token, id_token } = res;
+  let { access_token, id_token } = res.data;
   // token 换用户信息
   let userInfo = await axios.get(
     "https://users.authing.cn/oauth/oidc/user/userinfo?access_token" +
