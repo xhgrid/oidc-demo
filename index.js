@@ -7,7 +7,7 @@ let app = new koa();
 let router = new koaRouter();
 const clientId = "aaa";
 const clientSecret = "xxx";
-// Authing 控制台 redirect_uri 可以填下面这个。本示例 code 换 token，token 换用户信息都在后端完成。
+// Authing 控制台 redirect_uri 可以填下面这个。本示例 code 换 token，token 换用户信息都在后端完成。code 由 Authing 以 url query 的形式发到 redirect_uri。
 router.get("/oidc/handle", async (ctx, next) => {
   let code = ctx.query.code;
   // code 换 token
