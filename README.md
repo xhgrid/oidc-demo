@@ -126,4 +126,4 @@ try {
 - 从 `authorization` 请求头或 `id_token` query 中获取 id_token
 - 使用 `oidcAppSecret` 尝试解密
   - 如果成功，说明已经登录，可以返回 protected resource
-  - 如果失败，跳转到 `http://oauth.authing.cn/oauth/oidc/auth?client_id=${oidcAppId}&redirect_uri=${redirect_uri}&scope=openid%20profile%20offline_access%20phone%20email&response_type=code&state=jazzb&nonce=22121&prompt=consent`，也即上面提到的登录表单页面。
+  - 如果失败，跳转到 `http://sso.authing.cn/oauth/oidc/auth?client_id=${oidcAppId}&redirect_uri=${redirect_uri}&scope=openid%20profile%20offline_access%20phone%20email&response_type=code&state=jazzb&nonce=22121&prompt=consent`，也即上面提到的登录表单页面。

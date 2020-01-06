@@ -67,7 +67,7 @@ router.get("/protected/resource", async (ctx, next) => {
   } catch (err) {
     // 把用户重定向到 oidc 授权地址，进行登录
     ctx.redirect(
-      `http://oauth.authing.cn/oauth/oidc/auth?client_id=${oidcAppId}&redirect_uri=${redirect_uri}&scope=openid%20profile%20offline_access%20phone%20email&response_type=code&state=jazzb&nonce=22121&prompt=consent`
+      `http://sso.authing.cn/oauth/oidc/auth?client_id=${oidcAppId}&redirect_uri=${redirect_uri}&scope=openid%20profile%20offline_access%20phone%20email&response_type=code&state=jazzb&nonce=22121&prompt=consent`
     );
   }
 });
