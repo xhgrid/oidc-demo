@@ -37,10 +37,12 @@ router.get("/oidc/handle", async (ctx, next) => {
     ctx.body = error.response.data
     return
   }
-
   let { access_token, id_token } = code2tokenResponse.data;
   // token 换用户信息
   let token2UserInfoResponse = await axios.get("https://users.authing.cn/oauth/oidc/user/userinfo?access_token=" + access_token);
+
+  // 解密 id_token
+  let decrypted_id_token = jwt.verify(id_token, oidcAppSecret)
 
   // 这里可以操作用户信息，比如存入数据库
   // ...
@@ -48,10 +50,10 @@ router.get("/oidc/handle", async (ctx, next) => {
 
   ctx.body = {
     'code -> access_token response': code2tokenResponse.data,
-    'access_token -> userInfo response': token2UserInfoResponse.data
+    'access_token -> userInfo response': token2UserInfoResponse.data,
+    'decrypted id_token': decrypted_id_token
   }
 });
-
 
 router.get("/protected/resource", async (ctx, next) => {
   // 用户访问受保护资源需要携带 id_token
