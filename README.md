@@ -13,6 +13,13 @@ Authing OIDC RP 端处理方式，基本示例。
 
 ## 如何运行
 
+克隆该项目：
+```
+git clone https://github.com/Authing/oidc-demo/
+```
+
+然后运行：
+
 ```
 $ yarn
 $ node index.js
